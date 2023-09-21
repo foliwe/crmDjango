@@ -1,0 +1,88 @@
+{% extends 'project/base.html' %}
+
+{% block content%}
+<div class="container mx-auto mt-12">
+    <p class="py-4">
+    <h1 class="text-3xl text-slate-800 font-montserrat">
+        Client Info
+    </h1>
+    </p>
+    <div class="bg-white w-1/2 shadow px-4 border border-blue-900/30 rounded-md">
+        <div class="flex justify-between py-3 border-b">
+            <div class="">
+                Full Name:
+            </div>
+            <div class="">
+                {{record.first_name}} {{record.last_name}}
+            </div>
+
+        </div>
+
+        <div class="flex justify-between py-3 border-b">
+            <div class="">
+                Email:
+            </div>
+            <div class="">
+                {{record.email}}
+            </div>
+
+        </div>
+
+        <div class="flex justify-between py-3 border-b">
+            <div class="">
+                Phone:
+            </div>
+            <div class="">
+                {{record.phone}}
+            </div>
+
+        </div>
+
+        <div class="flex justify-between py-3 border-b">
+            <div class="">
+                Address:
+            </div>
+            <div class="">
+                {{record.address}}
+            </div>
+        </div>
+
+        <div class="flex justify-between py-3 border-b">
+            <div class="">
+                City:
+            </div>
+            <div class="">
+                {{record.city}}
+            </div>
+        </div>
+
+        <div class="flex justify-between py-3 border-b">
+            <div class="">
+                Province:
+            </div>
+            <div class="">
+                {{record.province}}
+            </div>
+        </div>
+        <div class="flex justify-between py-3 border-b">
+            <div class="">
+                Country:
+            </div>
+            <div class="">
+                {{record.country}}
+            </div>
+        </div>
+
+        <div class="flex justify-end py-4 space-x-3">
+            <div class="">
+                <a href="{% url 'update' record.id %}" class="btn primary">Update Record</a>
+            </div>
+            <div class="">
+                <a href="{% url 'delete_record' record.id %}" class="btn danger">Delete Record</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

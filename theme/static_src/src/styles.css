@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+
+.form_control {
+  @apply rounded-lg w-full p-3 my-2;
+}
+
+@tailwind utilities;
+
+@layer components {
+  .foliwe {
+    @apply text-6xl text-red-700;
+  }
+
+  .btn {
+    @apply rounded-lg  text-white py-2 px-4;
+  }
+
+  .primary {
+    @apply bg-blue-900 hover:bg-blue-800 transition-all ease-out delay-75;
+  }
+
+  .danger {
+    @apply bg-red-900;
+  }
+}
+
+h1 {
+  @apply text-5xl py-2;
+}
+
+body {
+  @apply text-neutral-700 bg-slate-50;
+}

@@ -1,0 +1,80 @@
+{% extends 'project/base.html' %}
+
+{% block content%}
+<div class="container mx-auto mt-12">
+    <p class="py-4">
+
+    <h1 class="text-5xl text-slate-800 font-montserrat">
+        Dashboard
+    </h1>
+    </p>
+
+    <p class="float-right">
+        <a href="{% url 'create_record'%}" class="btn primary flex justify-between items-center">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </span>
+            <span class="px-2">Add Record</span>
+
+        </a>
+    </p>
+
+    <div class="mt-16">
+        <table class="border-collapse border border-slate-400  w-full table-auto">
+            <thead class="bg-blue-950 text-white">
+                <tr class="">
+                    <th class="border border-blue-900 py-3">ID</th>
+                    <th class="border border-blue-900 py-3">Fitst Name</th>
+                    <th class="border border-blue-900 py-3">Last Name</th>
+                    <th class="border border-blue-900 py-3">Email</th>
+                    <th class="border border-blue-900 py-3">Phone</th>
+                    <th class="border border-blue-900 py-3">City</th>
+                    <th class="border border-blue-900 py-3">Address</th>
+                    <th class="border border-blue-900 py-3">Province</th>
+                    <th class="border border-blue-900 py-3">Country</th>
+                    <th class="border border-blue-900 py-3">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% if records %}
+
+                {% for record in records %}
+                <tr>
+
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.id}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.first_name}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.last_name}} </td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.email}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.phone}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.city}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.address|truncatewords:2}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.province}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">{{record.country}}</td>
+                    <td class="border border-slate-300 py-3 text-center px-2">
+                        <p class=" px-3 mx-auto">
+                            <a href="{% url 'view_record' record.id %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </a>
+                        </p>
+                    </td>
+
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}

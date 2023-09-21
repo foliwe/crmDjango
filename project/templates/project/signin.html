@@ -1,0 +1,36 @@
+{% extends 'project/base.html' %}
+
+{% block content%}
+<div class="container mx-auto mt-12">
+    <h1 class="text-5xl text-slate-800">
+        SignIn
+    </h1>
+
+    <div class="">
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="mb-2">
+                <label for="username"> User Name</label>
+                <div class="">{{ form.username }}</div>
+
+            </div>
+
+
+
+            <div class="mb-2">
+                <label for=""> Password</label>
+                <div class="">{{ form.password }}
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn primary w-1/5"> Login</button>
+        </form>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<nav class="flex justify-between items-center">
+    <div class="flex items-center ">
+        <div class="logo">
+            <h3 class="text-3xl font-montserrat font-bold text-neutral-300">
+                <a href="{%url 'home'%}">PXM</a>
+            </h3>
+        </div>
+        {% if user.is_authenticated %}
+        <ul class="text-white py-4 flex space-x-5 items-center ml-10 ">
+            <li><a href="{% url 'dashboard'%}"> Dashboard</a></li>
+
+
+        </ul>
+        {% endif %}
+    </div>
+
+    <div class="">
+
+        <ul class="text-white py-4 flex space-x-5 items-center">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"> Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'signin' %}"> Login</a></li>
+            <li class="btn primary"><a href="{% url 'signup' %}"> Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

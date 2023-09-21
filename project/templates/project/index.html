@@ -1,0 +1,33 @@
+{% extends 'project/base.html' %}
+
+{% block content%}
+<div class="container mx-auto">
+
+    {% if user.is_authenticated %}
+    <div class="grid mt-32 text-center">
+        <div class="">
+            <h1>Hello</h1>
+        </div>
+
+    </div>
+    {% else %}
+
+    <div class="grid mt-32 text-center">
+        <div class="">
+            <h1 class="font-kanit py-4">ProjextX... Managemnet at it's finest</h1>
+            <p class="text-2xl my-2">Keep track of your records effectively</p>
+        </div>
+
+        <hr class="mt-5 w-1/10">
+        <div class="mt-3">
+            <a href="{% url 'signup'%}" type="submit" class="btn primary items-center">Create Your Account</a>
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>
+
+
+
+{% endblock %}

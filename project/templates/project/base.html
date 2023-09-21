@@ -1,0 +1,30 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CRM | Django</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+</head>
+
+<body class="font-montserrat">
+    <header class="bg-blue-950">
+        <div class="container mx-auto">
+            {% include 'project/navbar.html' %}
+
+
+        </div>
+    </header>
+    {% block content%}
+    {% endblock %}
+
+    <script src="{% static 'js/app.js'%}"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <footer></footer>
+</body>
+
+</html>

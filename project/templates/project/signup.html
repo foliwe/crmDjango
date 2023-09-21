@@ -1,0 +1,62 @@
+{% extends 'project/base.html' %}
+
+{% block content%}
+<div class="container mx-auto mt-12">
+    <h1 class="text-5xl text-slate-800">
+        SignUp
+    </h1>
+
+    <div class="">
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="mb-2">
+                <label for="username"> User Name</label>
+                <div class="">{{ form.username }}</div>
+
+            </div>
+
+            <div class="mb-2">
+                <label for="email"> Email</label>
+                <div class="">{{ form.email }}
+                    <p class="text-sm">
+                        Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. Email address:
+                    </p>
+                </div>
+
+            </div>
+            <div class="mb-2">
+                <label for=""> Password</label>
+                <div class="">{{ form.password1 }}
+                    <p class="">
+                    <ul class="text-sm">
+                        <li>Your password can’t be too similar to your other personal information.</li>
+                        <li>Your password must contain at least 8 characters.</li>
+                        <li>Your password can’t be a commonly used password.</li>
+                        <li>Your password can’t be entirely numeric.</li>
+
+                    </ul>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mb-2">
+                <label for=""> Password Confirm</label>
+                <div class="">{{ form.password2 }}
+                    <p class="text-sm">
+                        Enter the same password as before, for verification.
+
+                    </p>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn primary w-1/5"> Create Account</button>
+        </form>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

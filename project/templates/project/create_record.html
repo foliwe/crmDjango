@@ -1,0 +1,62 @@
+{% extends 'project/base.html' %}
+
+{% block content%}
+<div class="container mx-auto mt-12">
+    <p class="py-4">
+
+    <h1 class="text-5xl text-slate-800 font-montserrat">
+        Create Record
+    </h1>
+    </p>
+
+    <div class="mt-16">
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="mb-2">
+
+                <div class="">{{ form.as_p}}</div>
+
+            </div>
+
+            <!-- <div class="mb-2">
+                <label for="email"> Email</label>
+                <div class="">{{ form.email }}
+                    <p class="text-sm">
+                        Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. Email address:
+                    </p>
+                </div>
+    
+            </div>
+            <div class="mb-2">
+                <label for=""> Password</label>
+                <div class="">{{ form.password1 }}
+                    <p class="">
+                    <ul class="text-sm">
+                        <li>Your password can’t be too similar to your other personal information.</li>
+                        <li>Your password must contain at least 8 characters.</li>
+                        <li>Your password can’t be a commonly used password.</li>
+                        <li>Your password can’t be entirely numeric.</li>
+    
+                    </ul>
+                    </p>
+                </div>
+    
+            </div>
+    
+            <div class="mb-2">
+                <label for=""> Password Confirm</label>
+                <div class="">{{ form.password2 }}
+                    <p class="text-sm">
+                        Enter the same password as before, for verification.
+    
+                    </p>
+                </div>
+    
+            </div> -->
+
+            <button type="submit" class="btn primary w-1/5"> Create Record</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
